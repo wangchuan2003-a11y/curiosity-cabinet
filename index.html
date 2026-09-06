@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <meta
+      name="description"
+      content="六个可以亲手尝试的数学、哲学与科学实验。改变一个参数，让一个问题变得具体。"
+    />
+    <title>好奇心实验柜 · Curiosity Cabinet</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">跳到实验目录</a>
+    <header>
+      <a class="brand" href="./">好奇心<span>实验柜</span></a
+      ><span class="wordmark">CURIOSITY CABINET</span
+      ><a
+        href="https://github.com/wangchuan2003-a11y"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub</a
+      >
+    </header>
+    <main>
+      <section class="intro">
+        <h1>把一个问题，<br />变成一次亲手实验。</h1>
+        <div>
+          <p>
+            数学的形状、选择的分歧、自然的规律。<br />从这里打开一扇小窗，改一个参数，<br />看看自己的直觉会不会改变。
+          </p>
+          <a href="#catalog" class="browse-link">浏览全部实验</a>
+        </div>
+      </section>
+      <section id="catalog" class="catalog" aria-label="实验目录">
+        <div class="filter-bar">
+          <div
+            id="themes"
+            class="themes"
+            role="group"
+            aria-label="按主题筛选"
+          ></div>
+          <div class="search-box">
+            <label for="search" class="sr-only">搜索实验</label
+            ><input
+              id="search"
+              type="search"
+              placeholder="搜一个问题、概念或实验名"
+              autocomplete="off"
+            /><button id="focus-search" aria-label="聚焦搜索，快捷键斜杠">
+              <kbd>/</kbd></button
+            ><button id="clear-search" hidden>清除</button>
+          </div>
+        </div>
+        <div class="result-line">
+          <p id="result-count" role="status" aria-live="polite"></p>
+          <span>先动手，再追问。</span>
+        </div>
+        <div id="experiments" class="experiments"></div>
+        <section id="empty" class="empty" hidden>
+          <h2>这个抽屉暂时是空的。</h2>
+          <p id="empty-detail"></p>
+          <button id="reset">清除搜索，查看全部实验</button>
+        </section>
+      </section>
+      <section class="closing">
+        <h2>小模型，<br />留给大问题。</h2>
+        <div>
+          <p>
+            每个实验都有明确的规则，也有解释不了的部分。这里的“可以试什么”给你一个入口，边界提醒你别把一张图当成整个世界。
+          </p>
+          <p>
+            目录只负责引路，完整模型、数据导出与实现说明都在各个实验里。实验和源码链接会在新标签页打开。
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>好奇心实验柜 · 六个真实作品，一个入口</span
+      ><a
+        href="https://github.com/wangchuan2003-a11y/curiosity-cabinet"
+        target="_blank"
+        rel="noopener noreferrer"
+        >这个目录的源码</a
+      >
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
