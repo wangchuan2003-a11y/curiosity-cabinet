@@ -41,3 +41,7 @@ npx playwright test --list
 GitHub Actions通过检查后，仅main非PR部署Pages。Pages来源选择GitHub Actions。无API、账号、后端或追踪。
 
 [MIT](LICENSE) © 2026 wangchuan2003-a11y
+
+## 模型如何核对
+
+[实现与模型边界核对](MODEL_REVIEW.md)汇总六个实验的可复算核心、已覆盖情况和结论边界，便于从图表继续追到公式与测试。
