@@ -1,5 +1,9 @@
 # 好奇心实验柜 · Curiosity Cabinet
 
+[打开在线实验柜](https://wangchuan2003-a11y.github.io/curiosity-cabinet/) · [模型核对说明](MODEL_REVIEW.md)
+
+![好奇心实验柜实际预览](docs/cabinet.jpg)
+
 一个轻量作品入口，收录六个可以亲手改变参数的数学、哲学与科学实验。按主题或关键词寻找实验，阅读可以尝试的操作与模型边界，再打开在线版本或源码。
 
 | 主题 | 实验                                                                     | 可以尝试                           |
