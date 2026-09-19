@@ -1,4 +1,4 @@
-export const THEMES = ["全部", "数学", "哲学", "科学"] as const;
+export const THEMES = ["全部", "数学", "哲学", "科学", "算法"] as const;
 export type Theme = (typeof THEMES)[number];
 export type Experiment = {
   slug: string;
@@ -9,12 +9,14 @@ export type Experiment = {
   tryThis: string;
   boundary: string;
   keywords: string[];
+  preview: string;
   width: number;
   height: number;
 };
 export const experiments: Experiment[] = [
   {
     slug: "chaos-atlas",
+    preview: "chaos-atlas.jpg",
     name: "Chaos Atlas",
     title: "混沌图谱",
     theme: "数学",
@@ -28,6 +30,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "veil-lab",
+    preview: "veil-lab.jpg",
     name: "Veil Lab",
     title: "无知之幕实验桌",
     theme: "哲学",
@@ -40,6 +43,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "orbit-forge",
+    preview: "orbit-forge.jpg",
     name: "Orbit Forge",
     title: "轨道实验室",
     theme: "科学",
@@ -53,6 +57,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "paradox-lens",
+    preview: "paradox-lens.jpg",
     name: "Paradox Lens",
     title: "辛普森悖论透镜",
     theme: "数学",
@@ -66,6 +71,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "cooperation-lab",
+    preview: "cooperation-lab.jpg",
     name: "Cooperation Lab",
     title: "合作博弈实验",
     theme: "哲学",
@@ -79,6 +85,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "entropy-lab",
+    preview: "entropy-lab.jpg",
     name: "Entropy Lab",
     title: "熵与时间",
     theme: "科学",
@@ -89,6 +96,54 @@ export const experiments: Experiment[] = [
     keywords: ["熵", "Ehrenfest", "粒子", "随机", "时间", "二项分布", "概率"],
     width: 1265,
     height: 712,
+  },
+  {
+    slug: "emergence-lab",
+    preview: "emergence-lab.jpg",
+    name: "Emergence Lab",
+    title: "涌现实验室",
+    theme: "科学",
+    question: "简单的局部规则，能长出什么形态？",
+    tryThis:
+      "切换反应扩散、黏菌轨迹或鸟群，改变参数、播种与单步观察，再保存数值快照。",
+    boundary:
+      "受自然机制启发的工程模型不是真实生物预测；黏菌模式不保证找到最短路线。",
+    keywords: [
+      "涌现",
+      "人工生命",
+      "Gray–Scott",
+      "反应扩散",
+      "黏菌",
+      "Physarum",
+      "Boids",
+      "鸟群",
+    ],
+    width: 1425,
+    height: 990,
+  },
+  {
+    slug: "pathfinder-arena",
+    preview: "pathfinder-arena.jpg",
+    name: "Pathfinder Arena",
+    title: "寻路竞技场",
+    theme: "算法",
+    question: "绕远一点，为什么代价反而更低？",
+    tryThis:
+      "在同一张网格画墙和加权地形，逐步对照 A* 与 Dijkstra 的搜索边界和最低总代价。",
+    boundary:
+      "模型只允许四方向移动；展开节点数不是运行时间，A* 不保证总比 Dijkstra 展开更少。",
+    keywords: [
+      "寻路",
+      "算法",
+      "A*",
+      "Dijkstra",
+      "迷宫",
+      "地形",
+      "最短路径",
+      "启发式",
+    ],
+    width: 1425,
+    height: 990,
   },
 ];
 export function demoURL(slug: string) {

@@ -5,9 +5,9 @@ test("themes, keyword intersection, empty results and recovery work", async ({
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
-  await expect(page.locator(".experiment")).toHaveCount(6);
+  await expect(page.locator(".experiment")).toHaveCount(8);
   await page.getByRole("button", { name: "科学", exact: true }).click();
-  await expect(page.locator(".experiment")).toHaveCount(2);
+  await expect(page.locator(".experiment")).toHaveCount(3);
   await page.getByRole("searchbox", { name: "搜索实验" }).fill("轨道");
   await expect(page.locator(".experiment")).toHaveCount(1);
   await expect(page.locator(".experiment")).toHaveAttribute(
@@ -18,8 +18,14 @@ test("themes, keyword intersection, empty results and recovery work", async ({
   await expect(page.locator("#empty")).toBeVisible();
   await expect(page.locator(".experiment")).toHaveCount(0);
   await page.locator("#reset").click();
-  await expect(page.locator(".experiment")).toHaveCount(6);
+  await expect(page.locator(".experiment")).toHaveCount(8);
   await expect(page.locator("#search")).toBeFocused();
+  await page.getByRole("button", { name: "算法", exact: true }).click();
+  await expect(page.locator(".experiment")).toHaveCount(1);
+  await expect(page.locator(".experiment")).toHaveAttribute(
+    "data-slug",
+    "pathfinder-arena",
+  );
   expect(errors).toEqual([]);
 });
 test("search keyboard shortcut and original cover loading work", async ({
@@ -45,7 +51,30 @@ test("search keyboard shortcut and original cover loading work", async ({
     )
     .toBe(true);
   await page.locator("#clear-search").click();
-  await expect(page.locator(".experiment")).toHaveCount(6);
+  await expect(page.locator(".experiment")).toHaveCount(8);
+  for (const slug of ["emergence-lab", "pathfinder-arena"]) {
+    const card = page.locator(`[data-slug="${slug}"]`);
+    const cover = card.locator("img");
+    await cover.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        cover.evaluate(
+          (img: HTMLImageElement) =>
+            img.complete &&
+            img.naturalWidth === 1425 &&
+            img.naturalHeight === 990,
+        ),
+      )
+      .toBe(true);
+    await expect(card.locator(".experiment-main")).toHaveAttribute(
+      "href",
+      `https://wangchuan2003-a11y.github.io/${slug}/`,
+    );
+    await expect(card.locator(".source-link")).toHaveAttribute(
+      "href",
+      `https://github.com/wangchuan2003-a11y/${slug}`,
+    );
+  }
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth + 1,

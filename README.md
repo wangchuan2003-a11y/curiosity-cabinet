@@ -1,27 +1,29 @@
 # 好奇心实验柜 · Curiosity Cabinet
 
-[打开在线实验柜](https://wangchuan2003-a11y.github.io/curiosity-cabinet/) · [模型核对说明](MODEL_REVIEW.md)
+[打开在线实验柜](https://wangchuan2003-a11y.github.io/curiosity-cabinet/) · [模型核对说明](MODEL_REVIEW.md) · [公开仓库总览](docs/portfolio.md)
 
 ![好奇心实验柜实际预览](docs/cabinet.jpg)
 
-一个轻量作品入口，收录六个可以亲手改变参数的数学、哲学与科学实验。按主题或关键词寻找实验，阅读可以尝试的操作与模型边界，再打开在线版本或源码。
+一个轻量作品入口，收录八个可以亲手改变参数的数学、哲学、科学与算法实验。按主题或关键词寻找实验，阅读可以尝试的操作与模型边界，再打开在线版本或源码。
 
-| 主题 | 实验                                                                     | 可以尝试                           |
-| ---- | ------------------------------------------------------------------------ | ---------------------------------- |
-| 数学 | [Chaos Atlas](https://wangchuan2003-a11y.github.io/chaos-atlas/)         | 改变初值，观察分岔与轨迹分离       |
-| 哲学 | [Veil Lab](https://wangchuan2003-a11y.github.io/veil-lab/)               | 先选择分配规则，再揭晓位置         |
-| 科学 | [Orbit Forge](https://wangchuan2003-a11y.github.io/orbit-forge/)         | 添加天体，改变初速度并检查守恒量   |
-| 数学 | [Paradox Lens](https://wangchuan2003-a11y.github.io/paradox-lens/)       | 比较分组、总体与共同权重           |
-| 哲学 | [Cooperation Lab](https://wangchuan2003-a11y.github.io/cooperation-lab/) | 改变执行噪声，观察固定策略互动     |
-| 科学 | [Entropy Lab](https://wangchuan2003-a11y.github.io/entropy-lab/)         | 单步倒退重放双箱模型，比较熵与分布 |
+| 主题 | 实验                                                                       | 可以尝试                           |
+| ---- | -------------------------------------------------------------------------- | ---------------------------------- |
+| 数学 | [Chaos Atlas](https://wangchuan2003-a11y.github.io/chaos-atlas/)           | 改变初值，观察分岔与轨迹分离       |
+| 哲学 | [Veil Lab](https://wangchuan2003-a11y.github.io/veil-lab/)                 | 先选择分配规则，再揭晓位置         |
+| 科学 | [Orbit Forge](https://wangchuan2003-a11y.github.io/orbit-forge/)           | 添加天体，改变初速度并检查守恒量   |
+| 数学 | [Paradox Lens](https://wangchuan2003-a11y.github.io/paradox-lens/)         | 比较分组、总体与共同权重           |
+| 哲学 | [Cooperation Lab](https://wangchuan2003-a11y.github.io/cooperation-lab/)   | 改变执行噪声，观察固定策略互动     |
+| 科学 | [Entropy Lab](https://wangchuan2003-a11y.github.io/entropy-lab/)           | 单步倒退重放双箱模型，比较熵与分布 |
+| 科学 | [Emergence Lab](https://wangchuan2003-a11y.github.io/emergence-lab/)       | 改变反应扩散、轨迹网络与鸟群规则   |
+| 算法 | [Pathfinder Arena](https://wangchuan2003-a11y.github.io/pathfinder-arena/) | 画加权地图，对照 A* 与 Dijkstra    |
 
 主题和关键词同时生效，多个空格分隔关键词按AND匹配；中文、英文名称和关键概念可搜索。按 `/` 或 `Ctrl/⌘ K` 聚焦搜索，空结果可一键恢复全部实验。实验和源码链接分别打开新标签页。
 
 ## 内容来源
 
-每条介绍依据对应仓库README（2026-09-07读取），保留简化模型的适用边界，不虚构星数、性能或实证效果。分类是目录的编辑组织方式，不是学科边界的判断。
+每条介绍依据对应仓库README（2026-09-19核对），保留简化模型的适用边界，不虚构星数、性能或实证效果。分类是目录的编辑组织方式，不是学科边界的判断。
 
-封面来自六个仓库各自的 `docs/preview.jpg`。目录副本与来源SHA256一致，没有编辑或重新编码图片。CSS控制封面展示。图像懒加载，目录不嵌入或同时运行六个实验，也不采集搜索内容。
+前六张封面来自对应仓库的 `docs/preview.jpg`；Emergence Lab来自 `docs/release-desktop.png`，Pathfinder Arena来自 `docs/v2-desktop.jpg`。全部原样复制，没有编辑或重新编码；Emergence的来源文件实际为JPEG，目录仅将副本后缀改为`.jpg`以匹配文件格式。[封面来源清单](docs/preview-sources.json)记录来源commit、路径、Git blob与SHA256，目录测试核对文件摘要。CSS控制封面展示。图像懒加载，目录不嵌入或同时运行八个实验，也不采集搜索内容。
 
 ## 开发
 
@@ -48,4 +50,4 @@ GitHub Actions通过检查后，仅main非PR部署Pages。Pages来源选择GitHu
 
 ## 模型如何核对
 
-[实现与模型边界核对](MODEL_REVIEW.md)汇总六个实验的可复算核心、已覆盖情况和结论边界，便于从图表继续追到公式与测试。
+[实现与模型边界核对](MODEL_REVIEW.md)汇总八个实验的可复算核心、已覆盖情况和结论边界，便于从图表继续追到公式与测试。
